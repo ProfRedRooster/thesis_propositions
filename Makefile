@@ -1,5 +1,12 @@
-all:
-	cd article; make; cd ..
+all: propositions.pdf
 
-count_words:
-	cd article; ./count_words.sh ; cd ..
+propositions.pdf: propositions.tex
+	pdflatex propositions
+
+view:
+	make
+	./view.sh
+
+clean:
+	./clean.sh
+
